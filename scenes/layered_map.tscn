@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4b0n8473uff6"]
+
+[ext_resource type="Script" path="res://scenes/LayeredMap.cs" id="1_64h8f"]
+[ext_resource type="Texture2D" uid="uid://btyieypx6x2wf" path="res://assets/world_map_tileset.png" id="1_k6jcv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xatab"]
+texture = ExtResource("1_k6jcv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xjr2g"]
+sources/0 = SubResource("TileSetAtlasSource_xatab")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_def16"]
+texture = ExtResource("1_k6jcv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mnmgc"]
+sources/0 = SubResource("TileSetAtlasSource_def16")
+
+[node name="LayeredMap" type="Node2D"]
+script = ExtResource("1_64h8f")
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_xjr2g")
+
+[node name="ObjectLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_mnmgc")
